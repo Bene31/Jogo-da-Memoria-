@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.27" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Memória Científica</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style type="text/css">
+			canvas {
+			  border: 1px solid #000000;
+			}
+			
+			#instrucao{
+				color: red;
+				font-family: arial black;
+				font-size: 14px;
+			}
+		</style>
+</head>
+<body>
+	<div id="game">
+		<div class="card" id="card0">
+			<div class="face back"></div>
+			<div class="face front"></div>
+		</div>
+		<div class="card" id="card1">
+			<div class="face back"></div>
+			<div class="face front"></div>
+		</div>
+		<div class="card" id="card2">
+			<div class="face back"></div>
+			<div class="face front"></div>
+		</div>
+		<div class="card" id="card3">
+			<div class="face back"></div>
+			<div class="face front"></div>
+		</div>
+		<div class="card" id="card4">
+			<div class="face back"></div>
+			<div class="face front"></div>
+		</div>
+		<div class="card" id="card5">
+			<div class="face back"></div>
+			<div class="face front"></div>
+		</div>
+		<div class="card" id="card6">
+			<div class="face back"></div>
+			<div class="face front"></div>
+		</div>
+		<div class="card" id="card7">
+			<div class="face back"></div>
+			<div class="face front"></div>
+		</div>
+		<div class="card" id="card8">
+			<div class="face back"></div>
+			<div class="face front"></div>
+		</div>
+		<div class="card" id="card9">
+			<div class="face back"></div>
+			<div class="face front"></div>
+		</div>
+		<div class="card" id="card10">
+			<div class="face back"></div>
+			<div class="face front"></div>
+		</div>
+		<div class="card" id="card11">
+			<div class="face back"></div>
+			<div class="face front"></div>
+		</div>
+		<div class="card" id="card12">
+			<div class="face back"></div>
+			<div class="face front"></div>
+		</div>
+		<div class="card" id="card13">
+			<div class="face back"></div>
+			<div class="face front"></div>
+		</div>
+		<div class="card" id="card14"> 
+			<div class="face back"></div>
+			<div class="face front"></div>
+		</div>
+		<div class="card" id="card15">
+			<div class="face back"></div>
+			<div class="face front"></div>
+		</div>
+		
+		<img id="match" src="img/gol.png" />
+		
+		<div id="gameOver"></div>
+		
+		</div>
+
+		<div><h1>SCORE: &nbsp; <span id="score"> 0 </span></h1></div>
+			
+	<img id="soundIcon" class="musicButton" src="img/semsom.png" 
+				height="50" width="50" 
+				onclick="javascript: playMusica()"/>
+		
+	<div id="instrucao">
+	Objetivo: Combinar os 8 jogadores com os escudos de suas respectivas seleções<br>
+	Acerto: Ganha 10 pontos<br>
+	Erro: Perde 1 ponto<br>
+	</div>
+	
+	<script src="js/script.js"></script>
+	
+	<script>
+		var musica = false
+		var musicaFim;
+		carregarMusicas();
+		function carregarMusicas() {
+			 musicaAcao = new Audio();
+			 musicaAcao.src = 'copa.mp3';
+			 musicaAcao.load();
+			 musicaAcao.volume = 0.5;
+			 musicaAcao.loop = true;
+			 
+			 musicaFim = new Audio();
+			 musicaFim.src = 'acabou.mp3';
+			 musicaFim.load();
+			 musicaFim.volume = 0.9;
+			 musicaFim.loop = false;
+			}			
+
+
+	function playMusica(){
+		if(!musica){
+			musica = true;
+			musicaAcao.play();
+			var icone = document.getElementById('soundIcon');
+			icone.src = 'img/comsom.png';
+	}else{
+		musica = false;
+		musicaAcao.pause();
+		var icone = document.getElementById('soundIcon');
+		icone.src = 'img/semsom.png';
+	}		
+	}
+	</script>
+</body>
+
+</html>
